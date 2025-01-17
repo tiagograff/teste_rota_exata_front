@@ -1,0 +1,25 @@
+.main__register{
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container__register{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 580px;
+    background-color: var(--color-white);
+    width: 480px;
+    border-radius: 30px;
+    box-shadow: 0px 2px 10px 0px #00000040;
+}
+
+.container__register--image{
+    width: 83px;
+    height: 70px;
+    margin-top: 40px;
+}

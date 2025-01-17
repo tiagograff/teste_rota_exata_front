@@ -9,14 +9,14 @@
 .container__background--image{
     width: 100%;
     height: 100vh;
-    background-image: url(../img/Imagem.svg);
+    background-image: url('../img/Imagem.svg');
     background-repeat: no-repeat;
     background-size: cover;
     fill: var(--color-white);
     filter:blur(5px);
     opacity: 0.3;
-    position: absolute;
     z-index: -1;
+    position: absolute;
 }
 
 .container__login{

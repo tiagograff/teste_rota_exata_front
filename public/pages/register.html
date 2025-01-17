@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RotaLocadora</title>
+    <link rel="shortcut icon" type="imagex/png" href="../img/Icon.svg" />
+    <link rel="stylesheet" href="../styles/index.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="main__register">
+      <section class="container__background--image"></section>
+      <section class="container__register">
+        <img
+          class="container__register--image"
+          src="../img/car-garage-solid.svg"
+          alt="imagem da tela de login, um carro na garagem"
+        />
+        <h2 class="container__login--title">Novo cadastro</h2>
+        <form class="container__form">
+          <label for="username">Nome de usuário:</label>
+          <input
+            class="container__form--input"
+            type="text"
+            id="username"
+            name="username"
+            required
+          />
+          <label for="birthday">Data de Aniversário:</label>
+          <input
+            class="container__form--input"
+            type="date"
+            id="birthday"
+            name="birthday"
+            required
+          />
+          <label for="email">E-mail:</label>
+          <input
+            class="container__form--input"
+            type="email"
+            id="email"
+            name="email"
+            required
+          />
+          <label for="password">Senha:</label>
+          <input
+            class="container__form--input"
+            type="password"
+            id="password"
+            name="password"
+            required
+          />
+          <button class="form__button" id="login" type="submit">
+            Cadastrar
+          </button>
+          <a class="form__register" href="../../index.html">Fazer Login</a>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
