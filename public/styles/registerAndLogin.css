@@ -64,3 +64,37 @@
 .container__form--input:focus{
     outline: 2px solid var(--color-blue);
 }
+
+.form__button{
+    width: 400px;
+    height: 40px;
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: var(--font-medium-large);
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 10px;
+    gap: 10px;
+}
+
+.form__button:hover{
+    background-color: var(--color-white);
+    color: var(--color-blue);
+    transition: 1s;
+}
+
+.form__register{
+    font-size: var(--font-medium-large);
+    color: var(--color-grey);
+    margin: 20px auto 40px auto;
+    text-decoration: none;
+}
+
+.form__register:hover{
+    color: var(--color-blue);
+    transition: 1s;
+    text-decoration: underline;
+}
