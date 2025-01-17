@@ -12,19 +12,28 @@
       <section class="container__background--image"></section>
       <section class="container__login">
         <img
+          class="container__login--image"
           src="./public/img/car-garage-solid.svg"
           alt="imagem da tela de login, um carro na garagem"
         />
-        <h2>Login</h2>
+        <h2 class="container__login--title">Login</h2>
         <form class="container__form">
-          <div class="container__label">
-            <label for="email">E-mail</label>
-            <input type="text" id="email" name="email" required />
-          </div>
-          <div class="container__label">
-            <label for="password">Senha</label>
-            <input type="password" id="password" name="password" required />
-          </div>
+          <label for="email">E-mail:</label>
+          <input
+            class="container__form--input"
+            type="text"
+            id="email"
+            name="email"
+            required
+          />
+          <label for="password">Senha:</label>
+          <input
+            class="container__form--input"
+            type="password"
+            id="password"
+            name="password"
+            required
+          />
         </form>
       </section>
     </main>
