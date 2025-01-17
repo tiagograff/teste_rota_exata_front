@@ -1,0 +1,17 @@
+.container__background--image{
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(20px);
+    fill: var(--color-white);
+    filter:blur(5px);
+    opacity: 0.3;
+}
+
+.container__form{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+}

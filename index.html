@@ -5,6 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RotaLocadora</title>
     <link rel="shortcut icon" type="imagex/png" href="./public/img/Icon.svg" />
+    <link rel="stylesheet" href="./public/styles/index.css" />
   </head>
-  <body></body>
+  <body>
+    <main>
+      <section class="container__background">
+        <img
+          class="container__background--image"
+          src="./public/img/Imagem.svg"
+          alt="imagem da de carros estacionados"
+        />
+      </section>
+      <section class="container__login">
+        <img
+          src="./public/img/car-garage-solid.svg"
+          alt="imagem da tela de login, um carro na garagem"
+        />
+        <h2>Login</h2>
+        <form class="container__form">
+          <div class="container__label">
+            <label for="email">E-mail</label>
+            <input type="text" id="email" name="email" required />
+          </div>
+          <div class="container__label">
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
 </html>

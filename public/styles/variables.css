@@ -1,0 +1,16 @@
+:root{
+    --color-blue: #007df0;
+    --color-green: #4caf50;
+    --color-red: #e8363b;
+    --color-grey: #a9a7a9;
+    --color-black: #1f1f1f;
+    --color-white: #ffffff;
+    --color-header: #f0f0f0;
+    --color-box: #dfdfdf;
+    --color-text: #333333;
+    --font-text: 'Roboto', sans-serif;
+    --font-small: 12px;
+    --font-medium: 14px;
+    --font-medium-large: 16px;
+    --font-large: 20px;
+}
