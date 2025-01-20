@@ -1,36 +1,26 @@
+let registeredUsers = JSON.parse(localStorage.getItem("registeredUsers")) || []; // Corrigido o nome da chave
+const login = document.getElementById("login");
+const password = document.getElementById("password");
+const email = document.getElementById("email");
+const username = document.getElementById("username");
 const date = document.getElementById("birthday");
-date.document.addEventListener("DOMContentLoaded", function () {
-  M.Datepicker.init(date, {
-    format: "yyyy-mm-dd", // Formato da data no campo
-    yearRange: 100, // Intervalo de anos
-    i18n: {
-      cancel: "Cancelar",
-      clear: "Limpar",
-      done: "Ok",
-      months: [
-        "Janeiro",
-        "Fevereiro",
-        "Março",
-        "Abril",
-        "Maio",
-        "Junho",
-        "Julho",
-        "Agosto",
-        "Setembro",
-        "Outubro",
-        "Novembro",
-        "Dezembro",
-      ],
-      weekdays: [
-        "Domingo",
-        "Segunda",
-        "Terça",
-        "Quarta",
-        "Quinta",
-        "Sexta",
-        "Sábado",
-      ],
-      weekdaysShort: ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"],
-    },
-  });
+
+function saveToLocalStorage() {
+  localStorage.setItem("registeredUsers", JSON.stringify(registeredUsers));
+}
+
+login.addEventListener("click", () => {
+  register();
 });
+
+function register() {
+  const user = {
+    username: username.value,
+    email: email.value,
+    password: password.value,
+    birthday: date.value,
+  };
+
+  registeredUsers.push(user);
+  saveToLocalStorage();
+}
