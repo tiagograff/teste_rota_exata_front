@@ -5,16 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RotaLocadora</title>
     <link rel="shortcut icon" type="imagex/png" href="../img/Icon.svg" />
-    <link rel="stylesheet" href="./public/styles/index.css" />
+    <link rel="stylesheet" href="../styles/index.css" />
   </head>
   <body>
-    <header>
+    <header class="header">
       <section class="header__guide">
-        <img src="../img/Logo.svg" alt="logo da RotaLocadora" />
+        <img
+          class="header__image"
+          src="../img/Logo.svg"
+          alt="logo da RotaLocadora"
+        />
         <nav class="header__guide--nav">
           <ul class="header__guide--items">
             <li class="header__guide--item">
-              <a class="header__guide--link" href="./public/pages/vehicles.html"
+              <a
+                class="header__guide--link active"
+                href="./public/pages/vehicles.html"
                 >Veículos</a
               >
             </li>
@@ -39,6 +45,9 @@
             src="../img/Photo.svg"
             alt="imagem de um usuário"
           />
+        </div>
+        <div class="header__">
+          <a class="header__logout" href="../../index.html">Sair</a>
         </div>
       </section>
     </header>

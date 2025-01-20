@@ -2,6 +2,7 @@
 @import url(./variables.css);
 @import url(./registerAndLogin.css);
 @import url(./register.css);
+@import url(./header.css);
 
 *{
     margin: 0;
