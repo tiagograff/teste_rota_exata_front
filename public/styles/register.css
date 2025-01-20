@@ -23,3 +23,10 @@
     height: 70px;
     margin-top: 40px;
 }
+
+.container__register--title{
+    font-size: var(--font-large);
+    color: var(--color-black);
+    font-weight: bold;
+    margin-top: 32px;
+}
