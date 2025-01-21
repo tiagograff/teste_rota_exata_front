@@ -1,0 +1,76 @@
+.container__filter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 35px 32px 24px 32px;
+    background-color: var(--color-white);
+}
+
+.button__register--vehicles{
+    width: 148px;
+    height: 30px;
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    font-size: var(--font-medium-large);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button__register--vehicles:hover{
+    background-color: var(--color-green);
+}
+
+.container__filter--options{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.filter__option{
+    display: flex;
+    flex-direction: column;
+}
+
+.filter__labels{
+    font-size: var(--font-small);
+    color: var(--color-text);
+}
+
+.filter__select, .filter__inputs{
+    width: 280px;
+    height: 40px;
+    padding: 0 12px;
+    color: var(--color-grey);
+    font-size: var(--font-small);
+    border: 1px solid var(--color-grey);
+    border-radius: 5px;
+}
+
+.filter__select:focus, .filter__inputs:focus{
+    border: 2px solid var(--color-blue);
+}
+
+.filter__select--option{
+    color: var(--color-text);
+}
+
+.container__filter--search{
+    display: flex;
+}
+
+.filter__button--search{
+    height: 40px;
+    width: 52px;
+    border: 1px solid var(--color-box);
+    border-radius: 5px;
+    background-color: var(--color-white);
+}
+
+.filter__button--filter{
+    height: 40px;
+    width: 52px;
+    border: none;
+    background-color: var(--color-white);
+}

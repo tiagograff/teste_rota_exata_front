@@ -59,19 +59,40 @@
     </header>
     <main>
       <section class="container__filter">
-        <button>Cadastrar Veículo</button>
+        <button class="button__register--vehicles">Cadastrar Veículo</button>
         <section class="container__filter--options">
-          <label for="vehiclesMark">Marca:</label>
-          <input type="text" id="vehiclesMark" />
-          <label for="purposeOfUse">Propósito de Uso:</label>
-          <input type="text" id="purposeOfUse" />
-          <label for="vehiclesPlate">Placa:</label>
-          <input type="text" id="vehiclesPlate" />
-          <button>
-            <img src="../img/magnifying-glass.svg" alt="buscador" />
-          </button>
-          <button><img src="../img/erase.svg" alt="apagar buscador" /></button>
-          <button>
+          <div class="filter__option">
+            <label class="filter__labels" for="vehiclesMark">Marca:</label>
+            <select class="filter__select" name="vehiclesMark" id="vehiclesMark">
+              <option class="filter__select--option" value="">Selecione a marca do veículo</option>
+              <option class="filter__select--option" value="audi">Audi</option>
+              <option class="filter__select--option" value="chery">Chery</option>
+              <option class="filter__select--option" value="chevrolet">Chevrolet</option>
+              <option class="filter__select--option" value="citroen">Citroen</option>
+              <option class="filter__select--option" value="fiat">Fiat</option>
+              <option class="filter__select--option" value="ford">Ford</option>
+            </select>
+          </div>
+          <div class="filter__option">
+            <label class="filter__labels" for="purposeOfUse">Propósito de Uso:</label>
+            <select class="filter__select" name="vehiclesMark" id="vehiclesMark">
+              <option class="filter__select--option" value="">Selecione o propósito de uso</option>
+              <option class="filter__select--option" value="pessoal">Uso pessoal</option>
+              <option class="filter__select--option" value="locacao">Veículo para locação</option>
+              <option class="filter__select--option" value="empresa">Uso da empresa</option>
+            </select>
+          </div>
+          <div class="filter__option">
+            <label class="filter__labels" for="vehiclesPlate">Placa:</label>
+            <input class="filter__inputs" type="text" id="vehiclesPlate" placeholder="Digite a placa ou a cor do veículo" />
+          </div>
+          <div class="container__filter--search">
+            <button class="filter__button--search" >
+              <img src="../img/magnifying-glass.svg" alt="buscador" />
+            </button>
+            <button class="filter__button--search"><img src="../img/erase.svg" alt="apagar buscador" /></button>
+          </div>
+          <button class="filter__button--filter">
             <img src="../img/bars-filter.svg" alt="filtrar" />
           </button>
         </section>

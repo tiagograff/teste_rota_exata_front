@@ -3,6 +3,7 @@
 @import url(./registerAndLogin.css);
 @import url(./register.css);
 @import url(./header.css);
+@import url(./filter.css);
 
 *{
     margin: 0;
