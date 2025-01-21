@@ -8,6 +8,11 @@
     color: var(--color-text);
 }
 
+.header__link{
+    text-decoration: none;
+    padding: auto 0;
+}
+
 .header__guide{
     display: flex;
     justify-content: space-between;
@@ -19,6 +24,7 @@
     width: 188px;
     height: 38px;
     cursor: pointer;
+    vertical-align: middle;
 }
 
 

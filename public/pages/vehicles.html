@@ -39,21 +39,45 @@
           <p class="header__profile--hello">Olá</p>
           <p class="header__profile--username">Usuário</p>
         </div>
-        <div class="header__profile--image">
+        <button class="header__profile--image">
           <img
             class="header__profile--img"
             src="../img/Photo.svg"
             alt="imagem de um usuário"
           />
-        </div>
-        <div class="header__">
-          <a class="header__logout" href="../../index.html"
-            ><img src="../img/arrow-right-from-bracket.svg" alt="sair" />
-            Sair</a
-          >
-        </div>
+        </button>
+        <nav class="menu__toggle">
+          <ul class="menu__toggle--items">
+            <li class="menu__toggle--item">
+              <a class="menu__toggle--logout" href="../../index.html"
+              ><img src="../img/arrow-right-from-bracket.svg" alt="sair" />
+              Sair</a
+            </li>
+          </ul>
+        </nav>
       </section>
     </header>
+    <main>
+      <section class="container__filter">
+        <button>Cadastrar Veículo</button>
+        <section class="container__filter--options">
+          <label for="vehiclesMark">Marca:</label>
+          <input type="text" id="vehiclesMark" />
+          <label for="purposeOfUse">Propósito de Uso:</label>
+          <input type="text" id="purposeOfUse" />
+          <label for="vehiclesPlate">Placa:</label>
+          <input type="text" id="vehiclesPlate" />
+          <button>
+            <img src="../img/magnifying-glass.svg" alt="buscador" />
+          </button>
+          <button><img src="../img/erase.svg" alt="apagar buscador" /></button>
+          <button>
+            <img src="../img/bars-filter.svg" alt="filtrar" />
+          </button>
+        </section>
+      </section>
+    </main>
+    <script src="../js/menuLogout.js"></script>
     <script type="module" src="../js/findUsers.js"></script>
     <script type="module" src="../js/updateUsername.js"></script>
   </body>
