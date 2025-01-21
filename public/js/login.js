@@ -1,23 +1,21 @@
-let registeredUsers = JSON.parse(localStorage.getItem("registeredUsers"));
+import { getUser } from "./findUsers.js";
 const userEmail = document.getElementById("userEmail");
 const userPassword = document.getElementById("userPassword");
-const login = document.getElementById("login");
-
-function getUser(email, password) {
-  return registeredUsers.find(
-    (user) => user.email === email && user.password === password
-  );
-}
+const loginButton = document.getElementById("loginButton");
 
 function loginUser() {
   const user = getUser(userEmail.value, userPassword.value);
   if (user) {
     alert("Usuário logado com sucesso!");
+    window.location.href =
+      "http://127.0.0.1:5500/teste_rota_exata_front/public/pages/vehicles.html";
+    localStorage.setItem("loggedUser", JSON.stringify(user));
   } else {
     alert("Usuário não encontrado!");
   }
 }
 
-login.addEventListener("click", () => {
+loginButton.addEventListener("click", (event) => {
+  event.preventDefault();
   loginUser();
 });

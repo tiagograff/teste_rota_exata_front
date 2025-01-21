@@ -1,5 +1,5 @@
 let registeredUsers = JSON.parse(localStorage.getItem("registeredUsers")) || []; // Corrigido o nome da chave
-const login = document.getElementById("login");
+const registerButton = document.getElementById("registerButton");
 const password = document.getElementById("password");
 const email = document.getElementById("email");
 const username = document.getElementById("username");
@@ -9,7 +9,7 @@ function saveToLocalStorage() {
   localStorage.setItem("registeredUsers", JSON.stringify(registeredUsers));
 }
 
-login.addEventListener("click", () => {
+registerButton.addEventListener("click", () => {
   register();
 });
 
