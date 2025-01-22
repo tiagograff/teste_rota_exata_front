@@ -47,7 +47,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    margin-top: 32px;
+    margin: 32px 0 0 20px;
     font-size: var(--font-small);
     gap: 15px;
     position: relative;
@@ -90,19 +90,24 @@
     transform: none; 
 }
 
-#password, #confirmPassword, #userPassword{
-    background-repeat: no-repeat;
-    background-size: 20px 20px;
-    background-position: right 10px center;
+.container__form--password{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.eye{
+    width: 20px;
+    height: 16px;
+    border: none;
     cursor: pointer;
-}
-
-#userPassword.eyesclose {
-    background-image: url('../img/eye-slash-solid.svg');
-}
-
-#userPassword.eyesopen {
-    background-image: url('../img/eye.svg');
+    z-index: 1;
+    left: -40px;
+    position: relative;
+    background-color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../../public/img/eye-slash-solid.svg');
 }
 
 .form__button{
@@ -137,4 +142,28 @@
     color: var(--color-blue);
     transition: 1s;
     text-decoration: underline;
+}
+
+/* modal */
+
+.modal__messageError {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: fixed;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    background-color: var(--color-red); 
+    color: var(--color-white);
+    padding: 10px; 
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 189px; 
+    border: none;
+    z-index: 1000;
+    display: none;
+    font-size: var(--font-medium);
+    transition: 2s linear;
 }

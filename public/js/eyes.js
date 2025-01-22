@@ -1,14 +1,16 @@
-export function eyes(passwordType) {
-  passwordType.addEventListener("click", (event) => {
+export function eyes(eye, userinput) {
+  eye.addEventListener("click", (event) => {
     event.preventDefault();
-    if (userPassword.classList.contains("eyesclose")) {
-      userPassword.classList.remove("eyesclose");
-      userPassword.classList.add("eyesopen");
-      userPassword.type = "text";
-    } else if (userPassword.classList.contains("eyesopen")) {
-      userPassword.classList.remove("eyesopen");
-      userPassword.classList.add("eyesclose");
-      userPassword.type = "password";
+    if (eye.classList.contains("eyesclose")) {
+      eye.classList.remove("eyesclose");
+      eye.classList.add("eyesopen");
+      eye.style.backgroundImage = `url("./public/img/eye.svg")`;
+      userinput.type = "text";
+    } else if (eye.classList.contains("eyesopen")) {
+      eye.classList.remove("eyesopen");
+      eye.classList.add("eyesclose");
+      eye.style.backgroundImage = `url("./public/img/eye-slash-solid.svg")`;
+      userinput.type = "password";
     }
   });
 }

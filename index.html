@@ -29,20 +29,31 @@
           <label class="container__form--label" for="userPassword"
             >Senha:</label
           >
-          <input
-            class="container__form--input eyesopen"
-            type="password"
-            id="userPassword"
-            name="userPassword"
-            required
-          />
+          <div class="container__form--password">
+            <input
+              class="container__form--input"
+              type="password"
+              id="userPassword"
+              name="userPassword"
+              required
+            />
+            <span class="eye eyesclose"></span>
+          </div>
           <button class="form__button" id="loginButton">Entrar</button>
           <a class="form__register" href="./public/pages/register.html"
             >Criar conta</a
           >
+          <dialog class="modal__messageError" id="modalErrorLogin">
+            <p class="messageError__text"></p>
+          </dialog>
+          <dialog class="modal__messageOk" id="modalOkLogin">
+            <p class="messageOk__text"></p>
+          </dialog>
         </form>
       </section>
     </main>
+    <script type="module" src="./public/js/eyes.js"></script>
+    <script type="module" src="./public/js/modalError.js"></script>
     <script type="module" src="./public/js/login.js"></script>
   </body>
 </html>
