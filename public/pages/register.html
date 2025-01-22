@@ -58,36 +58,43 @@
           </div>
           <div class="label__float">
             <label class="container__form--label" for="password">Senha</label>
-            <input
-              class="container__form--input"
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Digite a senha"
-              required
-            />
+            <div class="container__form--password">
+              <input
+                class="container__form--input"
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Digite a senha"
+                required
+              />
+              <span class="eye eyePassword eyesclose"></span>
+            </div>
+          </div>
           </div>
           <div class="label__float">
             <label class="container__form--label" for="confirmPassword"
               >Confirmar Senha</label
             >
-            <input
-              class="container__form--input"
-              type="password"
-              id="confirmPassword"
-              name="confirmPassword"
-              placeholder="Digite a senha novamente"
-              required
-            />
+            <div class="container__form--password">
+              <input
+                class="container__form--input"
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                placeholder="Digite a senha novamente"
+                required
+              />
+              <span class="eye eyeConfirmPassword eyesclose"></span>
+            </div>
           </div>
           <button class="form__button" id="registerButton">Cadastrar</button>
           <a class="form__register" href="../../index.html">Fazer Login</a>
         </form>
       </section>
     </main>
-    <script type="module" src="./public/js/eyes.js"></script>
-    <script type="module" src="./public/js/modalOk.js"></script>
-    <script type="module" src="./public/js/modalError.js"></script>
+    <script type="module" src="../js/eyes.js"></script>
+    <script type="module" src="../js/modalOk.js"></script>
+    <script type="module" src="../js/modalError.js"></script>
     <script type="module" src="../js/register.js"></script>
   </body>
 </html>
