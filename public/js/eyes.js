@@ -6,7 +6,6 @@ export function eyes(eye, userinput) {
     primaryURL = "../img/eye.svg";
     secondaryURL = "../img/eye-slash-solid.svg";
   } else {
-    // Definir um valor padrão se necessário
     primaryURL = "./public/img/eye.svg";
     secondaryURL = "./public/img/eye-slash-solid.svg";
   }
