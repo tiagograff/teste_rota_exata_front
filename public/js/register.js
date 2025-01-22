@@ -9,9 +9,30 @@ function saveToLocalStorage() {
   localStorage.setItem("registeredUsers", JSON.stringify(registeredUsers));
 }
 
-registerButton.addEventListener("click", () => {
-  register();
-});
+const validation = (userEmail, userPassword) => {
+  if (userEmail.value === "" || userPassword.value === "") {
+    showModalError(modalError, "Preencha todos os campos");
+    return false;
+  } else if (!validationPassword(userPassword)) {
+    showModalError(modalError, "Senha fraca");
+    return false;
+  } else if (!validationEmail(userEmail)) {
+    showModalError(modalError, "Email inválido");
+    return false;
+  }
+  return true;
+};
+
+const validationPassword = (password) => {
+  const regex =
+    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])[0-9a-zA-Z$*&@#]{8,}$/;
+  regex.test(password) ? false : true;
+};
+
+const validationEmail = (email) => {
+  const regex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i;
+  regex.test(email) ? false : true;
+};
 
 function register() {
   const user = {
@@ -24,3 +45,8 @@ function register() {
   registeredUsers.push(user);
   saveToLocalStorage();
 }
+
+registerButton.addEventListener("click", () => {
+  validation(registeredUsers.email, registeredUsers.password);
+  register();
+});
