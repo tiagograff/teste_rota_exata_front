@@ -1,4 +1,5 @@
 import { getUser } from "./findUsers.js";
+import { eyes } from "./eyes.js";
 const userEmail = document.getElementById("userEmail");
 const userPassword = document.getElementById("userPassword");
 const loginButton = document.getElementById("loginButton");
@@ -19,3 +20,5 @@ loginButton.addEventListener("click", (event) => {
   event.preventDefault();
   loginUser();
 });
+
+eyes(userPassword);

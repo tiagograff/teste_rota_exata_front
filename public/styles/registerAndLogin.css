@@ -49,28 +49,60 @@
     align-items: flex-start;
     margin-top: 32px;
     font-size: var(--font-small);
-    gap: 5px;
+    gap: 15px;
+    position: relative;
 }
 
-.container__form--input{
+/* estilização de campos label e input juntos */
+
+.container__form--label {
+    position: absolute;
+    top: -7.5px;
+    left: 10px;   
+    color: var(--color-text);
+    padding: 0 5px;
+    font-size: var(--font-small);
+    background-color: var(--color-white);
+}
+
+.container__form--input {
     border: var(--color-box) 1px solid;
     border-radius: 5px;
     width: 400px;
     height: 40px;
-    padding: 12px;
-    gap: 10px;
+    padding: 0 15px;
+    font-size: var(--font-small);
+    outline: none;
+    transition: border-color 0.3s;
 }
 
-.container__form--input:focus{
+.container__form--input:focus {
     outline: 2px solid var(--color-blue);
 }
 
+.container__form--input:focus + .container__form--label,
+.container__form--input:not(:placeholder-shown) + .container__form--label {
+    top: 18%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: var(--font-small); 
+    color: var(--color-text); 
+    transform: none; 
+}
+
 #password, #confirmPassword, #userPassword{
-    background-image: url(../img/eye.svg);
     background-repeat: no-repeat;
     background-size: 20px 20px;
     background-position: right 10px center;
     cursor: pointer;
+}
+
+#userPassword.eyesclose {
+    background-image: url('../img/eye-slash-solid.svg');
+}
+
+#userPassword.eyesopen {
+    background-image: url('../img/eye.svg');
 }
 
 .form__button{
