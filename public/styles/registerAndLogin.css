@@ -65,7 +65,7 @@
     outline: 2px solid var(--color-blue);
 }
 
-#password{
+#password, #confirmPassword, #userPassword{
     background-image: url(../img/eye.svg);
     background-repeat: no-repeat;
     background-size: 20px 20px;
