@@ -18,26 +18,34 @@
         />
         <h2 class="container__login--title">Login</h2>
         <form class="container__form">
-          <label class="container__form--label" for="userEmail">E-mail:</label>
-          <input
-            class="container__form--input"
-            type="text"
-            id="userEmail"
-            name="useremail"
-            required
-          />
-          <label class="container__form--label" for="userPassword"
-            >Senha:</label
-          >
-          <div class="container__form--password">
+          <div class="label__float">
+            <label class="container__form--label" for="userEmail"
+              >E-mail:</label
+            >
             <input
               class="container__form--input"
-              type="password"
-              id="userPassword"
-              name="userPassword"
+              type="text"
+              id="userEmail"
+              name="useremail"
+              placeholder="Digite o e-mail"
               required
             />
-            <span class="eye eyesclose"></span>
+          </div>
+          <div class="label__float">
+            <label class="container__form--label" for="userPassword"
+              >Senha:</label
+            >
+            <div class="container__form--password">
+              <input
+                class="container__form--input"
+                type="password"
+                id="userPassword"
+                name="userPassword"
+                placeholder="Digite a senha"
+                required
+              />
+              <span class="eye eyesclose"></span>
+            </div>
           </div>
           <button class="form__button" id="loginButton">Entrar</button>
           <a class="form__register" href="./public/pages/register.html"

@@ -6,6 +6,7 @@
     <title>RotaLocadora</title>
     <link rel="shortcut icon" type="imagex/png" href="../img/Icon.svg" />
     <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../styles/register.css" />
   </head>
   <body>
     <main class="main__register">
@@ -18,51 +19,75 @@
         />
         <h2 class="container__register--title">Novo cadastro</h2>
         <form class="container__form">
-          <label for="username">Nome de usuário:</label>
-          <input
-            class="container__form--input"
-            type="text"
-            id="username"
-            name="username"
-            required
-          />
-          <label for="birthday">Data de Aniversário:</label>
-          <input
-            class="container__form--input"
-            type="date"
-            id="birthday"
-            name="birthday"
-            required
-          />
-          <label for="email">E-mail:</label>
-          <input
-            class="container__form--input"
-            type="email"
-            id="email"
-            name="email"
-            required
-          />
-          <label for="password">Senha:</label>
-          <input
-            class="container__form--input"
-            type="password"
-            id="password"
-            name="password"
-            required
-          />
-          <label for="confirmPassword">Confirmar Senha:</label>
-          <input
-            class="container__form--input"
-            type="password"
-            id="confirmPassword"
-            name="confirmPassword"
-            required
-          />
+          <div class="label__float">
+            <label class="container__form--label" for="username"
+              >Nome de usuário</label
+            >
+            <input
+              class="container__form--input"
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Digite seu nome de usuário"
+              required
+            />
+          </div>
+          <div class="label__float">
+            <label class="container__form--label" for="birthday"
+              >Data de Aniversário</label
+            >
+            <input
+              class="container__form--input"
+              type="date"
+              id="birthday"
+              name="birthday"
+              placeholder="Selecione a data de aniversário"
+              required
+            />
+          </div>
+          <div class="label__float">
+            <label class="container__form--label" for="email">E-mail</label>
+            <input
+              class="container__form--input"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Digite o e-mail"
+              required
+            />
+          </div>
+          <div class="label__float">
+            <label class="container__form--label" for="password">Senha</label>
+            <input
+              class="container__form--input"
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Digite a senha"
+              required
+            />
+          </div>
+          <div class="label__float">
+            <label class="container__form--label" for="confirmPassword"
+              >Confirmar Senha</label
+            >
+            <input
+              class="container__form--input"
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              placeholder="Digite a senha novamente"
+              required
+            />
+          </div>
           <button class="form__button" id="registerButton">Cadastrar</button>
           <a class="form__register" href="../../index.html">Fazer Login</a>
         </form>
       </section>
     </main>
+    <script type="module" src="./public/js/eyes.js"></script>
+    <script type="module" src="./public/js/modalOk.js"></script>
+    <script type="module" src="./public/js/modalError.js"></script>
     <script type="module" src="../js/register.js"></script>
   </body>
 </html>
