@@ -66,8 +66,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       saveToLocalStorage();
       showModalOk(modalOk, "Usuário cadastrado com sucesso");
       setTimeout(() => {
-        window.location.href =
-          "http://127.0.0.1:5500/teste_rota_exata_front/index.html";
+        window.location.href = "/teste_rota_exata_front/index.html";
       }, 1000);
       username.value = "";
       email.value = "";
