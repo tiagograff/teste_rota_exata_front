@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
           window.location.href = "./public/pages/vehicles.html";
           localStorage.setItem("loggedUser", JSON.stringify(user));
-        }, 3000);
+        }, 1000);
       } else {
         showModalError(modalError, "Usuário não encontrado");
       }
