@@ -42,6 +42,7 @@
     top: calc(50% - 32px);
     left: 10px;
     padding: 5px;
+    z-index: 1;
 }
 
 .filter__select, .filter__inputs{
@@ -52,11 +53,7 @@
     font-size: var(--font-small);
     border: 1px solid var(--color-grey);
     border-radius: 5px;
-}
-
-.filter__select:focus, .filter__inputs:focus{
-    border: 2px solid var(--color-blue);
-}
+}           
 
 .filter__select--option{
     color: var(--color-text);
@@ -80,3 +77,65 @@
     border: none;
     background-color: var(--color-white);
 }
+
+/* select com checkbox */
+
+.custom-select {
+    position: relative;
+    width: 280px;
+    border: 1px solid var(--color-grey);
+    border-radius: 5px;
+    background-color: var(--color-white);
+  }
+  
+  .select-trigger {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    cursor: pointer;
+    font-size: var(--font-small);
+    color: var(--color-grey);
+  }
+  
+  .select-trigger .arrow {
+    width: 7px;
+    height: 7px;
+    border-left: 2px solid var(--color-grey);
+    border-bottom: 2px solid var(--color-grey);
+    transform: rotate(-45deg);
+  }
+  
+  .options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-white);
+    border: 1px solid var(--color-grey);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 100;
+  }
+  
+  .option {
+    padding: 8px 12px;
+    font-size: var(--font-small);
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .option:hover {
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    cursor: pointer;
+  }
+  
+  .options input[type="checkbox"] {
+    margin: 0;
+  }
+  

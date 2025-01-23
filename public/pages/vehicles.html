@@ -63,16 +63,39 @@
         <section class="container__filter--options">
           <div class="filter__option">
             <label class="filter__labels" for="vehiclesMark">Marca:</label>
-            <select class="filter__select" name="vehiclesMark" id="vehiclesMark">
-              <option class="filter__select--option" value="">Selecione a marca do veículo</option>
-              <option class="filter__select--option" value="audi">Audi</option>
-              <option class="filter__select--option" value="chery">Chery</option>
-              <option class="filter__select--option" value="chevrolet">Chevrolet</option>
-              <option class="filter__select--option" value="citroen">Citroen</option>
-              <option class="filter__select--option" value="fiat">Fiat</option>
-              <option class="filter__select--option" value="ford">Ford</option>
-            </select>
-          </div>
+            <div class="custom-select">
+              <div class="select-trigger" id="selectTrigger">
+                <span>Selecione a(s) marca(s) do veículo</span>
+                <div class="arrow"></div>
+              </div>
+              <div class="options" id="optionsList">
+                <label class="option">
+                  <input type="checkbox" value="audi" />
+                  Audi
+                </label>
+                <label class="option">
+                  <input type="checkbox" value="chery" />
+                  Chery
+                </label>
+                <label class="option">
+                  <input type="checkbox" value="chevrolet" />
+                  Chevrolet
+                </label>
+                <label class="option">
+                  <input type="checkbox" value="citroen" />
+                  Citroen
+                </label>
+                <label class="option">
+                  <input type="checkbox" value="fiat" />
+                  Fiat
+                </label>
+                <label class="option">
+                  <input type="checkbox" value="ford" />
+                  Ford
+                </label>
+              </div>
+            </div>
+          </div>          
           <div class="filter__option">
             <label class="filter__labels" for="purposeOfUse">Propósito de Uso:</label>
             <select class="filter__select" name="vehiclesMark" id="vehiclesMark">
@@ -98,6 +121,7 @@
         </section>
       </section>
     </main>
+    <script src="../js/checkbox.js"></script>
     <script src="../js/menuLogout.js"></script>
     <script type="module" src="../js/findUsers.js"></script>
     <script type="module" src="../js/updateUsername.js"></script>
