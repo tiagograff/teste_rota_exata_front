@@ -45,6 +45,7 @@
       width: 650px;
       border: none;
       box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
   }
 
   .modal__header{
@@ -105,9 +106,13 @@
 
   .modal__confort{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 5px;
-    margin: 20px 0 20px 32px
+    margin: 20px 0 20px 32px;
+    justify-content: flex-start;
+    gap: 10px;
+    align-items: center;
+    position: relative;
   }
 
   .modal__km{
@@ -134,4 +139,48 @@
 
   .modal__save:hover{
     background-color: var(--color-green);
+  }
+
+  .modal__rating{
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%,-50%) rotateY(180deg);
+    display: flex;
+  }
+  
+  .modal__rating input{
+    display: none;
+  }
+  
+  .modal__rating label{
+      display: block;
+      cursor: pointer;
+      width: 30px;
+  }
+  
+  .modal__rating label:before{
+    content: '\f005';
+    font-family: fontAwesome;
+    position: relative;
+    display: block;
+    font-size: 30px;
+    color: var(--color-blue-star);
+  }
+  
+  .modal__rating label:after{
+    content: '\f005';
+    font-family: fontAwesome;
+    position: absolute;
+    display: block;
+    font-size: 30px;
+    color: var(--color-blue);
+    top: 0;
+    opacity: 0;
+    transition: .5;
+  }
+  .modal__rating label:hover:after,
+  .modal__rating label:hover ~ label:after,
+  .modal__rating input:checked ~ label:after{
+    opacity: 1;
   }
