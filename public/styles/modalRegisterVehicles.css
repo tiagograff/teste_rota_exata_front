@@ -1,0 +1,48 @@
+.label__float{
+    position: relative;
+    padding-top: 20px;
+}
+
+.modal__form--input{
+    border: 1px solid var(--color-box);
+    border-radius: 5px;
+    outline: none;
+    width: 400px;
+    height: 40px;
+    padding: 12px;
+    font-size: var(--font-small)
+  }
+  
+  .modal__form--input:focus{
+    border: 2px solid var(--color-blue)
+  }
+  
+  .modal__form--label{
+    position: absolute;
+    top: calc(50% - 23px);
+    left: 10px;
+    background-color: var(--color-white);
+    padding: 5px;
+  }
+
+  .modal__form--input:focus + .modal__form--label,
+  .modal__form--input:not(:placeholder-shown) + .modal__form--label{
+    font-size: var(--font-small);
+    top: 0;
+  }  
+
+  .modal__vehicles{
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 50%; 
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: var(--color-white);
+      color: var(--color-text);
+      width: 600px;
+      border: none;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
