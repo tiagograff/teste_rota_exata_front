@@ -130,57 +130,61 @@
               <img src="../img/xmark.svg" alt="close icon">
             </button>
           </header>
-          <div class="modal__columnOne">
-            <form class="modal__form">
+          <form class="modal__form">
+            <section class="modal__column">
+              <div class="modal__columnOne">
+                <div class="label__float">
+                  <label class="modal__form--label" for="vehiclePlateModal">Placa</label>
+                  <input class="modal__form--input" type="text" id="vehiclePlateModal" name="vehiclePlateModal" placeholder="Digite a placa do veículo" required />
+                </div>
+                <div class="label__float">
+                  <label class="modal__form--label" for="vehicleModelModal">Modelo</label>
+                  <input class="modal__form--input" type="text" id="vehicleModelModal" name="vehicleModelModal" placeholder="Digite o modelo do veículo" required />
+                </div>
+                <div class="label__float">
+                  <label class="modal__form--label" for="vehicleColorModal">Cor</label>
+                  <input class="modal__form--input" type="text" id="vehicleColorModal" name="vehicleColorModal" placeholder="Digite a cor do veículo" required />
+                </div>
+              </div>
+            <div class="modal__columnTwo">
               <div class="label__float">
-                <label class="modal__form--label" for="vehiclePlateModal">Placa</label>
-                <input class="modal__form--input" type="text" id="vehiclePlateModal" name="vehiclePlateModal" placeholder="Digite a placa do veículo" required />
+                <label class="modal__form--label" for="vehicleMarkModal">Marca</label>
+                <select class="modal__form--input" name="car-brands" id="vehicleMarkModal" required>
+                  <option value="audi">Audi</option>
+                  <option value="chery">Chery</option>
+                  <option value="chevrolet">Chevrolet</option>
+                  <option value="citroen">Citroën</option>
+                  <option value="fiat">Fiat</option>
+                  <option value="ford">Ford</option>
+                </select>              
               </div>
               <div class="label__float">
-                <label class="modal__form--label" for="vehicleModelModal">Modelo</label>
-                <input class="modal__form--input" type="text" id="vehicleModelModal" name="vehicleModelModal" placeholder="Digite o modelo do veículo" required />
-              </div>
-              <div class="label__float">
-                <label class="modal__form--label" for="vehicleColorModal">Cor</label>
-                <input class="modal__form--input" type="text" id="vehicleColorModal" name="vehicleColorModal" placeholder="Digite a cor do veículo" required />
-              </div>
-          </div>
-          <div class="modal__columnTwo">
-            <div class="label__float">
-              <label class="modal__form--label" for="vehicleMarkModal">Marca</label>
-              <select class="modal__form--input" name="car-brands" id="vehicleMarkModal" required>
-                <option value="audi">Audi</option>
-                <option value="chery">Chery</option>
-                <option value="chevrolet">Chevrolet</option>
-                <option value="citroen">Citroën</option>
-                <option value="fiat">Fiat</option>
-                <option value="ford">Ford</option>
-              </select>              
+                <label class="modal__form--label" for="vehicleYearModal">Ano</label>
+                <input class="modal__form--input" type="number" id="vehicleYearModal" name="vehicleYearModal" min="1990" max="2030" placeholder="Selecione o ano do veículo" required>              
             </div>
             <div class="label__float">
-              <label class="modal__form--label" for="vehicleYearModal">Ano</label>
-              <input class="modal__form--input" type="number" id="vehicleYearModal" name="vehicleYearModal" min="1990" max="2030" placeholder="Selecione o ano do veículo" required>              
-          </div>
-          <div class="label__float">
-            <label class="modal__form--label" for="vehiclePurposeModal">Propósito</label>
-            <select class="modal__form--input" name="vehiclePurpose" id="vehiclePurposeModal" required>
-              <option value="pessoal">Uso pessoal</option>
-              <option value="locacao">Veículo para locação</option>
-              <option value="empresa">Uso da empresa</option>
-            </select>              
-          </div>
+              <label class="modal__form--label" for="vehiclePurposeModal">Propósito</label>
+              <select class="modal__form--input" name="vehiclePurpose" id="vehiclePurposeModal" required>
+                <option value="pessoal">Uso pessoal</option>
+                <option value="locacao">Veículo para locação</option>
+                <option value="empresa">Uso da empresa</option>
+              </select>              
+            </div>
+            </section>
           <section class="modal__location">
             <h3 class="modal__subtitle">
               Local de repouso do veículo
             </h3>
-            <div class="label__float">
-              <label class="modal__form--label" for="vehicleLatitudeModal">Latitude</label>
-              <input class="modal__form--input" type="text" id="vehicleLatitudeModal" name="vehicleLocationModal" placeholder="Digite o local de repouso do veículo" required />
-            </div>
-            <div class="label__float">
-              <label class="modal__form--label" for="vehicleLongitudeeModal">Local</label>
-              <input class="modal__form--input" type="text" id="vehicleLongitudeeModal" name="vehicleLongitudenModal" placeholder="Digite o local de repouso do veículo" required />
-            </div>
+            <section class="modal__location--inputs">
+              <div class="label__float">
+                <label class="modal__form--label" for="vehicleLatitudeModal">Latitude</label>
+                <input class="modal__form--input" type="text" id="vehicleLatitudeModal" name="vehicleLocationModal" placeholder="Digite o local de repouso do veículo" required />
+              </div>
+              <div class="label__float">
+                <label class="modal__form--label" for="vehicleLongitudeeModal">Local</label>
+                <input class="modal__form--input" type="text" id="vehicleLongitudeeModal" name="vehicleLongitudenModal" placeholder="Digite o local de repouso do veículo" required />
+              </div>
+            </section>
           </section>
           <section class="modal__confort">
             <h3 class="modal__subtitle">
@@ -190,8 +194,8 @@
             </div>
           </section>
           <section class="modal__km">
-            <label for="vehicleKmModal">veículo zero-quilômetro</label>
             <input type="checkbox" id="vehicleKmModal" name="vehicleKmModal" value="km" />
+            <label for="vehicleKmModal">Veículo zero-quilômetro</label>
           </section>
           <footer class="modal__footer">
             <button id="saveRegisterVehicle" class="modal__save">
