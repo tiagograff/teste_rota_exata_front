@@ -215,7 +215,30 @@
       <dialog class="modal__messageOk" id="modalOkVehicles">
         <p class="messageOk__text"></p>
       </dialog>
+      <section class="table">
+        <table class="table__vehicles" id="tableVehicles" aria-label="Tabela de veículos">
+          <thead class="table__vehicles--head">
+            <tr class="table__vehicles--rowHead">
+              <th id="tablePlate" class="table__vehicles--column" scope="col">Placa</th>
+              <th id="tableMark" class="table__vehicles--column" scope="col">Marca/Modelo</th>
+              <th id="tableYear" class="table__vehicles--column" scope="col">Ano</th>
+              <th id="tableColor" class="table__vehicles--column" scope="col">Cor</th>
+              <th id="tablePurpose" class="table__vehicles--column" scope="col">Propósito de uso</th>
+              <th id="tableKm" class="table__vehicles--column" scope="col">Zero-quilômetro?</th>
+              <th id="tableConfort" class="table__vehicles--column" scope="col">Nível de conforto</th>
+              <th id="tableLocal" class="table__vehicles--column" scope="col">Local de repouso (lat,long)</th>
+              <th id="tableMoreInfo" class="table__vehicles--column" scope="col"></th>
+            </tr>
+          </thead>
+          <tbody class="table__vehicles--body">
+          </tbody>
+        </table>
+        </table>
+        <section class="pagination" id="pagination">
+        </section>
+      </section>
     </main>
+    <script src="../js/tableVehicles.js"></script>
     <script type="module" src="../js/modalOk.js"></script>
     <script type="module" src="../js/modalError.js"></script>
     <script type="module" src="../js/modalVehicles.js"></script>

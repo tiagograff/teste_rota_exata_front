@@ -1,0 +1,84 @@
+.table{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 15px;
+    margin: 0 32px;
+}
+
+.table__vehicles{
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table__vehicles--info{
+    font-size: var(--font-medium);
+    padding: 18px;
+}
+
+.table__vehicles--column{
+    padding: 20px;
+    color: var(--color-blue);
+}
+
+.table__vehicles--row{
+    border-top: 2px solid rgba(196, 196, 196, 0.2);
+}
+
+.table__vehicles--rowHead.table__vehicles--column{
+    border:none
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+  
+.pagination__button,#buttonLeft, #buttonRight {
+    margin: 25px 10px;
+    padding: 10px;
+    border: 1px solid var(--color-grey);
+    background-color: var(--color-white);
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: var(--font-large);
+    width: 35px;
+    height: 35px;
+    color: var(--color-text);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+  
+.pagination__button.active {
+    background-color: var(--color-blue);
+    color: white;
+}
+  
+.pagination__button:hover, #buttonLeft:hover, #buttonRight:hover {
+    background-color: var(--color-blue-star);
+    color: white;
+}
+
+#tablePlate,
+#tableMark,
+#tableYear,
+#tableColor,
+#tableConfort,
+#tableKm,
+#tablePurpose,
+#tableLocal{
+  text-align: left;
+}
+
+#confortInfo{
+    background: url(../img/star-solid.svg);
+    background-position:40px center;
+    background-repeat: no-repeat;
+}
