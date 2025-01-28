@@ -36,6 +36,7 @@ const validationModal = () => {
     longitude.value === "" ||
     !Array.from(confort).some((input) => input.checked)
   ) {
+    showModalError(modalError, "Preencha todos os campos!");
     return false;
   } else {
     return true;
@@ -77,7 +78,5 @@ save.addEventListener("click", (event) => {
     saveToLocalStorage(loggedUser);
     showModalOk(modalOk, "Veículo cadastrado com sucesso!");
     window.location.reload();
-  } else {
-    showModalError(modalError, "Preencha todos os campos!");
   }
 });

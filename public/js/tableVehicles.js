@@ -6,10 +6,10 @@ const rowsPerPage = 7;
 const tableBody = document.querySelector(".table__vehicles--body");
 const paginationContainer = document.getElementById("pagination");
 
-function renderTable(page) {
+export function renderTable(page, vehiclesList) {
   const start = (page - 1) * rowsPerPage;
   const end = start + rowsPerPage;
-  const pageData = vehicles.slice(start, end);
+  const pageData = vehiclesList.slice(start, end);
 
   let idCounter = start;
 
@@ -66,48 +66,47 @@ function renderTable(page) {
     tr.appendChild(tdDetails);
     tableBody.appendChild(tr);
   });
+}
 
-  tableBody.addEventListener("click", (event) => {
-    const detailsElement = event.target.closest(".image__details");
-    if (detailsElement) {
-      const parentTd = detailsElement.parentElement;
-      const menuDetails = parentTd.querySelector(".menu__details");
+tableBody.addEventListener("click", (event) => {
+  const detailsElement = event.target.closest(".image__details");
+  if (detailsElement) {
+    const parentTd = detailsElement.parentElement;
+    const menuDetails = parentTd.querySelector(".menu__details");
 
-      if (menuDetails) {
-        // Alterna a visibilidade do menu
-        if (menuDetails.classList.contains("active")) {
-          menuDetails.classList.remove("active");
-        } else {
-          document
-            .querySelectorAll(".menu__details.active")
-            .forEach((element) => {
-              element.classList.remove("active");
-            });
-          menuDetails.classList.add("active");
-        }
+    if (menuDetails) {
+      if (menuDetails.classList.contains("active")) {
+        menuDetails.classList.remove("active");
+      } else {
+        document
+          .querySelectorAll(".menu__details.active")
+          .forEach((element) => {
+            element.classList.remove("active");
+          });
+        menuDetails.classList.add("active");
       }
     }
+  }
 
-    const spanDelete = event.target.closest(".menu__navDelete--item");
-    if (spanDelete) {
-      const trElement = spanDelete.closest("tr");
-      const vehiclePlate = trElement.querySelector(
-        ".table__vehicles--info"
-      ).textContent;
+  const spanDelete = event.target.closest(".menu__navDelete--item");
+  if (spanDelete) {
+    const trElement = spanDelete.closest("tr");
+    const vehiclePlate = trElement.querySelector(
+      ".table__vehicles--info"
+    ).textContent;
 
-      vehicles = vehicles.filter((vehicle) => vehicle.plate !== vehiclePlate);
+    vehicles = vehicles.filter((vehicle) => vehicle.plate !== vehiclePlate);
 
-      loggedUser.vehicles = vehicles;
-      localStorage.setItem("loggedUser", JSON.stringify(loggedUser));
+    loggedUser.vehicles = vehicles;
+    localStorage.setItem("loggedUser", JSON.stringify(loggedUser));
 
-      trElement.remove();
+    trElement.remove();
 
-      renderTable(currentPage);
-      renderPagination(vehicles.length, rowsPerPage);
-      window.location.reload();
-    }
-  });
-}
+    renderTable(currentPage, vehicles);
+    renderPagination(vehicles.length, rowsPerPage);
+    window.location.reload();
+  }
+});
 
 function updateStatusButton(button) {
   if (button.disabled) {
@@ -119,7 +118,7 @@ function updateStatusButton(button) {
   }
 }
 
-function renderPagination(totalRows, rowsPerPage) {
+export function renderPagination(totalRows, rowsPerPage) {
   const pageCount = Math.ceil(totalRows / rowsPerPage);
   paginationContainer.innerHTML = "";
 
@@ -149,7 +148,7 @@ function renderPagination(totalRows, rowsPerPage) {
       updateStatusButton(left);
       updateStatusButton(right);
 
-      renderTable(currentPage);
+      renderTable(currentPage, vehicles);
     });
 
     paginationContainer.appendChild(button);
@@ -172,7 +171,7 @@ function renderPagination(totalRows, rowsPerPage) {
         .querySelectorAll("button")
         [currentPage].classList.add("active");
 
-      renderTable(currentPage);
+      renderTable(currentPage, vehicles);
 
       left.disabled = currentPage === 1;
       right.disabled = false;
@@ -191,7 +190,7 @@ function renderPagination(totalRows, rowsPerPage) {
         .querySelectorAll("button")
         [currentPage].classList.add("active");
 
-      renderTable(currentPage);
+      renderTable(currentPage, vehicles);
 
       right.disabled = currentPage === pageCount;
       left.disabled = false;
@@ -201,5 +200,5 @@ function renderPagination(totalRows, rowsPerPage) {
   });
 }
 
-renderTable(1);
+renderTable(1, vehicles);
 renderPagination(vehicles.length, rowsPerPage);
