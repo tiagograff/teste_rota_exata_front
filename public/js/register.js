@@ -60,6 +60,7 @@ registerButton.addEventListener("click", (event) => {
       email: email.value,
       password: password.value,
       birthday: date.value,
+      vehicles: [],
     };
     registeredUsers.push(users);
     saveToLocalStorage();

@@ -77,8 +77,50 @@
   text-align: left;
 }
 
-#confortInfo{
+[id^="confortInfo"]{
     background: url(../img/star-solid.svg);
     background-position:40px center;
     background-repeat: no-repeat;
+}
+
+.image__details{
+    cursor: pointer;
+}
+
+.menu__details{
+    display: none;
+}
+
+.menu__details.active{
+    display: flex;
+    position: absolute;
+    width: 85px;
+    height: 135px;
+    align-items: center;
+    justify-content: center;
+    background-color:var(--color-white);
+    text-decoration: none;
+    list-style-type: none;
+    flex-direction: column;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: var(--font-medium);
+}
+
+.menu__details li{
+    display: flex;
+    flex-direction: column;
+    gap: 14.5px;
+}
+
+.menu__details li span{
+    padding: 5px 10px;
+}
+
+.menu__details li span:hover{
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    padding: auto;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
 }
