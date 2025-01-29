@@ -1,4 +1,5 @@
-import { renderTable, renderPagination } from "./tableVehicles.js";
+import { renderTable } from "./tableVehicles.js";
+import { renderPagination } from "./pagination.js";
 
 let loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
 let vehicles = loggedUser && loggedUser.vehicles ? loggedUser.vehicles : [];

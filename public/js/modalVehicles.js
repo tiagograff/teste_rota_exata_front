@@ -20,11 +20,11 @@ const kilimeter = document.getElementById("vehicleKmModal");
 const modalOk = document.getElementById("modalOkVehicles");
 const modalError = document.getElementById("modalErrorVehicles");
 
-const saveToLocalStorage = (loggedUser) => {
+export const saveToLocalStorage = (loggedUser) => {
   localStorage.setItem("loggedUser", JSON.stringify(loggedUser));
 };
 
-const validationModal = () => {
+export const validationModal = () => {
   if (
     plate.value === "" ||
     model.value === "" ||
@@ -77,6 +77,8 @@ save.addEventListener("click", (event) => {
     loggedUser.vehicles.push(newVehicle);
     saveToLocalStorage(loggedUser);
     showModalOk(modalOk, "Veículo cadastrado com sucesso!");
-    window.location.reload();
+    setTimeout(() => {
+      window.location.reload();
+    }, 3000);
   }
 });
