@@ -32,7 +32,7 @@
     top: 0;
   }  
 
-  .modal__vehicles{
+  .modal__vehicles, .modal__vehicles--edit{
       display: none;
       flex-direction: column;
       justify-content: center;
@@ -141,46 +141,57 @@
     background-color: var(--color-green);
   }
 
-  .modal__rating{
+  .modal__rating,
+  .modal__rating--edit {
     position: absolute;
     top: 50%;
-    left: 45%;
-    transform: translate(-50%,-50%) rotateY(180deg);
+    left: 50%;
+    transform: translate(-50%, -50%); 
     display: flex;
+    direction: rtl;
   }
   
-  .modal__rating input{
+  .modal__rating input,
+  .modal__rating--edit input {
     display: none;
   }
   
-  .modal__rating label{
-      display: block;
-      cursor: pointer;
-      width: 30px;
+  .modal__rating label,
+  .modal__rating--edit label {
+    display: block;
+    cursor: pointer;
+    width: 30px;
+    font-size: 30px;
+    color: var(--color-blue-star);
+    position: relative;
   }
   
-  .modal__rating label:before{
+  .modal__rating label:before,
+  .modal__rating--edit label:before {
     content: '\f005';
-    font-family: fontAwesome;
-    position: relative;
+    font-family: FontAwesome;
     display: block;
     font-size: 30px;
     color: var(--color-blue-star);
   }
   
-  .modal__rating label:after{
+  .modal__rating label:after,
+  .modal__rating--edit label:after {
     content: '\f005';
-    font-family: fontAwesome;
+    font-family: FontAwesome;
     position: absolute;
     display: block;
     font-size: 30px;
     color: var(--color-blue);
     top: 0;
     opacity: 0;
-    transition: .5;
   }
-  .modal__rating label:hover:after,
+
   .modal__rating label:hover ~ label:after,
-  .modal__rating input:checked ~ label:after{
+  .modal__rating label:hover:after,
+  .modal__rating input:checked ~ label:after,
+  .modal__rating--edit label:hover ~ label:after,
+  .modal__rating--edit label:hover:after,
+  .modal__rating--edit input:checked ~ label:after {
     opacity: 1;
   }

@@ -55,14 +55,9 @@ save.addEventListener("click", (event) => {
   event.preventDefault();
   modal.style.display = "none";
   if (validationModal()) {
-    const confortStars = document.querySelectorAll(".modal__rating input");
-    let confortValue = 0;
+    const selectedStar = document.querySelector(".modal__rating input:checked");
+    const confortValueRegister = selectedStar ? selectedStar.value : 0;
 
-    confortStars.forEach((star) => {
-      if (star.checked) {
-        confortValue = star.getAttribute("data-rating");
-      }
-    });
     const newVehicle = {
       plate: plate.value,
       mark: mark.value + " " + model.value,
@@ -70,7 +65,7 @@ save.addEventListener("click", (event) => {
       year: year.value,
       purpose: purpose.value,
       km: kilimeter.checked === true ? "Sim" : "Não",
-      confort: confortValue,
+      confort: confortValueRegister,
       location: `${latitude.value}, ${longitude.value}`,
       details: "../img/Frame 1.svg",
     };
