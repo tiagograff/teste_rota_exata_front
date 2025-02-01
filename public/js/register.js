@@ -54,6 +54,12 @@ const validation = (userEmail, userPassword) => {
 
 registerButton.addEventListener("click", (event) => {
   event.preventDefault();
+
+  if (registeredUsers.some((user) => user.email === email.value)) {
+    showModalError(modalError, "Email já cadastrado");
+    return;
+  }
+
   if (validation(email, password)) {
     const users = {
       username: username.value,

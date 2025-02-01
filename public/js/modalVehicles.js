@@ -16,7 +16,7 @@ const purpose = document.getElementById("vehiclePurposeModal");
 const latitude = document.getElementById("vehicleLatitudeModal");
 const longitude = document.getElementById("vehicleLongitudeModal");
 const confort = document.querySelectorAll('.modal__rating input[type="radio"]');
-const kilimeter = document.getElementById("vehicleKmModal");
+const kilometer = document.getElementById("vehicleKmModal");
 const modalOk = document.getElementById("modalOkVehicles");
 const modalError = document.getElementById("modalErrorVehicles");
 
@@ -25,6 +25,15 @@ export const saveToLocalStorage = (loggedUser) => {
 };
 
 export const validationModal = () => {
+  const isPlateRegistered = loggedUser.vehicles.some(
+    (vehicle) => vehicle.plate.toUpperCase() === plate.value.toUpperCase()
+  );
+
+  if (isPlateRegistered) {
+    showModalError(modalError, "Placa já cadastrada");
+    return;
+  }
+
   if (
     plate.value === "" ||
     model.value === "" ||
@@ -59,12 +68,12 @@ save.addEventListener("click", (event) => {
     const confortValueRegister = selectedStar ? selectedStar.value : 0;
 
     const newVehicle = {
-      plate: plate.value,
+      plate: plate.value.trim().toUpperCase(),
       mark: mark.value + " " + model.value,
       color: color.value,
       year: year.value,
       purpose: purpose.value,
-      km: kilimeter.checked === true ? "Sim" : "Não",
+      km: kilometer.checked === true ? "Sim" : "Não",
       confort: confortValueRegister,
       location: `${latitude.value}, ${longitude.value}`,
       details: "../img/Frame 1.svg",

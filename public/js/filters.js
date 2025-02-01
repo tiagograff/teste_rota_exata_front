@@ -26,7 +26,7 @@ function getSelectedMarks() {
 
 function filterVehicles() {
   const selectedMarks = getSelectedMarks();
-  let plateValue = filterPlateInput.value.trim();
+  let plateValue = filterPlateInput.value.trim().toUpperCase();
   let purposeValue = filterPurpose.options[filterPurpose.selectedIndex].value;
 
   if (selectedMarks.length > 0) {
