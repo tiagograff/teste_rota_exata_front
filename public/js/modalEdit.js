@@ -21,8 +21,6 @@ export const vehicleUpdate = (vehicle) => {
   const confort = document.querySelectorAll(
     '.modal__rating--edit input[type="radio"]'
   );
-
-  // Para pegar o valor do rating selecionado, procure o input marcado
   const selectedComfort =
     Array.from(confort)
       .find((star) => star.checked)

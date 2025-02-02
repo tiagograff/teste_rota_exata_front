@@ -1,14 +1,18 @@
 import { renderPagination } from "./pagination.js";
 import { renderTable } from "./tableVehicles.js";
-import { findVehicleInfo, vehicleUpdate } from "./modalEdit.js";
+import { findVehicleInfo } from "./modalEdit.js";
+import { findID } from "./findID.js";
 
 let currentPage = 1;
 let loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
 let vehicles = loggedUser && loggedUser.vehicles ? loggedUser.vehicles : [];
 
+let currentID = 0;
+
 const rowsPerPage = 7;
 const tableBody = document.querySelector(".table__vehicles--body");
 const editModal = document.querySelector(".modal__vehicles--edit");
+const detailsModal = document.querySelector(".modal__vehicles--details");
 
 tableBody.addEventListener("click", (event) => {
   const detailsElement = event.target.closest(".image__details");
@@ -56,9 +60,23 @@ tableBody.addEventListener("click", (event) => {
     close.addEventListener("click", () => {
       editModal.style.display = "none";
     });
-    const currentTD = event.target.closest(".table__vehicles--info");
-    let currentID = currentTD.id.replace(/\D/g, "");
+    currentID = findID(event);
     const objecteVehicle = findVehicleInfo(currentID);
-    vehicleUpdate(objecteVehicle);
+    console.log(objecteVehicle);
+  }
+
+  const spanDetails = event.target.closest(".menu__navDetails--item");
+  const closeDetails = document.getElementById("modalCloseDetails");
+  if (spanDetails) {
+    detailsModal.style.display = "flex";
+    currentID = findID(event);
+    const eventModalOpened = new CustomEvent("modalOpened", {
+      detail: { currentID },
+    });
+    document.dispatchEvent(eventModalOpened);
+
+    closeDetails.addEventListener("click", () => {
+      detailsModal.style.display = "none";
+    });
   }
 });

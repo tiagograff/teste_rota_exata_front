@@ -7,6 +7,9 @@
     <link rel="shortcut icon" type="imagex/png" href="../img/Icon.svg" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
   </head>
   <body>
     <header class="header">
@@ -389,6 +392,48 @@
           </form>
         </section>
       </dialog>
+      <dialog class="modal__vehicles--details">
+        <section class="modal__container">
+          <header class="modal__header--details">
+            <h2 class="modal__title">
+              Detalhes de Veículo
+            </h2>
+            <button id="modalCloseDetails" class="modal__button--close">
+              <img src="../img/xmark.svg" alt="close icon">
+            </button>
+          </header>
+          <article class="modal__details--info">
+            <nav class="modal__nav">
+              <ul class="modal__list">
+                <li class="modal__item">
+                  <img src="../img/Veículo.svg" alt="imagem de um veículo">
+                  <div class="item__plate">
+                    <span class="plate__span">
+                      PLACA
+                    </span>
+                    <span class="fleet__span">
+                      Frota 101
+                    </span>
+                  </div>
+                </li>
+                <li class="modal__item">
+                  div.
+                </li>
+                <li class="modal__item"></li>
+                <li class="modal__item"></li>
+                <li class="modal__item"></li>
+                <li class="modal__item"></li>
+                <li class="modal__item"></li>
+              </ul>
+            </nav>
+          </article>
+          <article class="modal__details--map">
+            <div class="modal__map" id="map">
+
+            </div>
+          </article>
+        </section>
+      </dialog>
       <dialog class="modal__messageError" id="modalErrorVehicles">
         <p class="messageError__text"></p>
       </dialog>
@@ -418,6 +463,9 @@
         </section>
       </section>
     </main>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
     <script src="../js/menuLogout.js"></script>
     <script type="module" src="../js/findUsers.js"></script>
     <script type="module" src="../js/updateUsername.js"></script>
@@ -430,5 +478,6 @@
     <script type="module" src="../js/pagination.js"></script> 
     <script type="module" src="../js/menuDetails.js"></script>
     <script type="module" src="../js/modalEdit.js"></script>
+    <script type="module" src="../js/map.js"></script>
   </body>
 </html>

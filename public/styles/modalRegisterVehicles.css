@@ -43,6 +43,8 @@
       background-color: var(--color-white);
       color: var(--color-text);
       width: 650px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
       border: none;
       box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
       z-index: 1000;
@@ -56,6 +58,9 @@
     background-color: var(--color-blue);
     width: 650px;
     height: 76px;
+    border: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
   }
 
   .modal__title{
@@ -194,4 +199,47 @@
   .modal__rating--edit label:hover:after,
   .modal__rating--edit input:checked ~ label:after {
     opacity: 1;
+  }
+
+  .modal__vehicles--details{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-white);
+    color: var(--color-text);
+    width: 1000px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: none;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal__header--details{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  align-items: center;
+  background-color: var(--color-blue);
+  width: 1000px;
+  height: 76px;
+  border: none;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+  #map {
+    width: 936px;
+    height: 344px;
+    border-radius: 5px;
+    margin: 32px;
+  }
+  
+
+  .modal__details--info {
+    flex: 1; 
   }
