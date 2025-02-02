@@ -21,6 +21,7 @@ const colorDetails = document.getElementById("colorSpan");
 const purposeDetails = document.getElementById("purposeSpan");
 const kmDetails = document.getElementById("kmSpan");
 const comfortDetails = document.getElementById("comfortSpan");
+const locationDetails = document.getElementById("locationSpan");
 
 tableBody.addEventListener("click", (event) => {
   const detailsElement = event.target.closest(".image__details");
@@ -94,6 +95,8 @@ tableBody.addEventListener("click", (event) => {
     purposeDetails.textContent = vehicleInfos.purpose;
     kmDetails.textContent = vehicleInfos.km;
     comfortDetails.textContent = comfortValue;
+    locationDetails.textContent =
+      vehicleInfos.latitude + ", " + vehicleInfos.longitude;
 
     closeDetails.addEventListener("click", () => {
       detailsModal.style.display = "none";

@@ -239,9 +239,27 @@
     height: 344px;
     border-radius: 5px;
     margin: 32px;
+    position: relative;
   }
   
 
   .modal__details--info {
     flex: 1; 
+  }
+
+  .modal__location {
+    position: absolute;
+    z-index: 1000;
+    height: 58px;
+    width: 178px;
+    background-color: var(--color-white);
+    border: none;
+    border-radius: 5px;
+    margin: 10px 50px;
+    padding: 12px;
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
   }

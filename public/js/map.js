@@ -1,5 +1,5 @@
 let map;
-let marker; // Variável para armazenar o marcador
+let marker;
 let loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
 let vehicles = loggedUser && loggedUser.vehicles ? loggedUser.vehicles : [];
 
@@ -29,7 +29,10 @@ document.addEventListener("modalOpened", function (event) {
     longitude = parseFloat(longitude.replace(/[^0-9.-]/g, ""));
 
     if (!map) {
-      map = L.map("map").setView([latitude, longitude], 15);
+      map = L.map("map", { zoomControl: false }).setView(
+        [latitude, longitude],
+        15
+      );
 
       L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution:
@@ -43,10 +46,7 @@ document.addEventListener("modalOpened", function (event) {
       map.removeLayer(marker);
     }
 
-    marker = L.marker([latitude, longitude])
-      .addTo(map)
-      .bindPopup(`Veículo ID: ${currentID} <br> Placa: ${currentPlate}`)
-      .openPopup();
+    marker = L.marker([latitude, longitude]).addTo(map).openPopup();
 
     map.invalidateSize();
   }, 300);
