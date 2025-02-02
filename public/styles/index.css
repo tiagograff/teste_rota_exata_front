@@ -6,6 +6,7 @@
 @import url(./filter.css);
 @import url(./modalRegisterVehicles.css);
 @import url(./tableVehicles.css);
+@import url(./modalDetails.css);
 
 *{
     margin: 0;
