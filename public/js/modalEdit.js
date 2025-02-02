@@ -57,12 +57,12 @@ export const vehicleUpdate = (vehicle) => {
     const vehicleIndex = vehicles.findIndex(
       (vehicle) => vehicle.plate === updatedVehicle.plate
     );
+    console.log(updatedVehicle);
 
     if (vehicleIndex !== -1) {
       vehicles[vehicleIndex] = updatedVehicle;
       loggedUser.vehicles = vehicles;
       localStorage.setItem("loggedUser", JSON.stringify(loggedUser));
-      console.log("✅ Veículo atualizado no localStorage!");
     } else {
       showModalError(modalError, "Veículo não encontrado");
     }
@@ -77,6 +77,7 @@ export function findVehicleInfo(id) {
     .getElementById(`plateInfo-${id}`)
     .textContent.trim();
   const vehicle = vehicles.find((vehicle) => plateNow === vehicle.plate);
+  console.log(vehicle);
   const plate = vehicle.plate;
   const [mark, model] = vehicle.mark.split(" ");
   const color = vehicle.color;
@@ -100,6 +101,6 @@ export function findVehicleInfo(id) {
     km: km,
     confort: Array.from(confort).find((star) => star.checked)?.value || 0,
   };
-
+  console.log(nowVehicle);
   return nowVehicle;
 }

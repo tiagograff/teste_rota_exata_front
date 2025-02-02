@@ -1,6 +1,6 @@
 import { renderPagination } from "./pagination.js";
 import { renderTable } from "./tableVehicles.js";
-import { findVehicleInfo } from "./modalEdit.js";
+import { findVehicleInfo, vehicleUpdate } from "./modalEdit.js";
 import { findID } from "./findID.js";
 
 let currentPage = 1;
@@ -62,7 +62,7 @@ tableBody.addEventListener("click", (event) => {
     });
     currentID = findID(event);
     const objecteVehicle = findVehicleInfo(currentID);
-    console.log(objecteVehicle);
+    vehicleUpdate(objecteVehicle);
   }
 
   const spanDetails = event.target.closest(".menu__navDetails--item");
