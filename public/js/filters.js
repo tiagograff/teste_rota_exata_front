@@ -17,6 +17,9 @@ const filterMarks = document.querySelectorAll(
 );
 const filterPurpose = document.getElementById("purposeOfUse");
 const filterPlateInput = document.getElementById("vehiclesPlate");
+const rubberButton = document.getElementById("rubberButton");
+
+const filterMarkSpan = document.getElementById("filterMarkSpan");
 
 function getSelectedMarks() {
   return Array.from(filterMarks)
@@ -59,6 +62,21 @@ function filterVehicles() {
 }
 
 filterButtonSearch.addEventListener("click", filterVehicles);
+rubberButton.addEventListener("click", () => {
+  filterMarks.forEach((checkbox) => (checkbox.checked = false));
+  filterMarkSpan.innerText = "Selecione a(s) marca(s) do veículo";
+  filterMarkSpan.style.color = "var(--color-grey)";
+  filterPurpose.selectedIndex = 0;
+  filterPlateInput.value = "Selecione a(s) marca(s) do veículo";
+
+  currentPage = 1;
+  filteredVehiclesMarks = [...originalVehicles];
+  filteredVehiclesPurpose = [...originalVehicles];
+  filteredVehiclesPlate = [...originalVehicles];
+
+  renderTable(currentPage, originalVehicles);
+  renderPagination(originalVehicles.length, rowsPerPage);
+});
 
 renderTable(currentPage, vehicles);
 renderPagination(vehicles.length, rowsPerPage);
