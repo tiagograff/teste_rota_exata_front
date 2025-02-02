@@ -70,14 +70,14 @@
 #tableMark,
 #tableYear,
 #tableColor,
-#tableConfort,
+#tableComfort,
 #tableKm,
 #tablePurpose,
 #tableLocal{
   text-align: left;
 }
 
-[id^="confortInfo"]{
+[id^="comfortInfo"]{
     background: url(../img/star-solid.svg);
     background-position:40px center;
     background-repeat: no-repeat;

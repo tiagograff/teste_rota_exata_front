@@ -18,11 +18,11 @@ export const vehicleUpdate = (vehicle) => {
   const latitude = document.getElementById("vehicleLatitudeModalEdit");
   const longitude = document.getElementById("vehicleLongitudeModalEdit");
   const kilometer = document.getElementById("vehicleKmModalEdit");
-  const confort = document.querySelectorAll(
+  const comfort = document.querySelectorAll(
     '.modal__rating--edit input[type="radio"]'
   );
   const selectedComfort =
-    Array.from(confort)
+    Array.from(comfort)
       .find((star) => star.checked)
       ?.getAttribute("data-rating") || 0;
 
@@ -34,12 +34,12 @@ export const vehicleUpdate = (vehicle) => {
   purpose.value = vehicle.purpose;
   latitude.value = vehicle.latitude;
   longitude.value = vehicle.longitude;
-  confort.value = selectedComfort;
+  comfort.value = selectedComfort;
   kilometer.checked = vehicle.km === "Sim";
 
   save.addEventListener("click", () => {
     const updatedComfort =
-      Array.from(confort)
+      Array.from(comfort)
         .find((star) => star.checked)
         ?.getAttribute("data-rating") || 0;
     const updatedVehicle = {
@@ -49,7 +49,7 @@ export const vehicleUpdate = (vehicle) => {
       year: year.value,
       purpose: purpose.value,
       km: kilometer.checked ? "Sim" : "Não",
-      confort: updatedComfort,
+      comfort: updatedComfort,
       location: `${latitude.value}, ${longitude.value}`,
       details: "../img/Frame 1.svg",
     };
@@ -57,7 +57,6 @@ export const vehicleUpdate = (vehicle) => {
     const vehicleIndex = vehicles.findIndex(
       (vehicle) => vehicle.plate === updatedVehicle.plate
     );
-    console.log(updatedVehicle);
 
     if (vehicleIndex !== -1) {
       vehicles[vehicleIndex] = updatedVehicle;
@@ -77,7 +76,6 @@ export function findVehicleInfo(id) {
     .getElementById(`plateInfo-${id}`)
     .textContent.trim();
   const vehicle = vehicles.find((vehicle) => plateNow === vehicle.plate);
-  console.log(vehicle);
   const plate = vehicle.plate;
   const [mark, model] = vehicle.mark.split(" ");
   const color = vehicle.color;
@@ -87,7 +85,7 @@ export function findVehicleInfo(id) {
   latitude = latitude.replace(/[^0-9.-]/g, "");
   longitude = longitude.replace(/[^0-9.-]/g, "");
   const km = vehicle.km;
-  const confort = vehicle.confort;
+  const comfort = vehicle.comfort;
 
   const nowVehicle = {
     plate: plate,
@@ -99,8 +97,7 @@ export function findVehicleInfo(id) {
     latitude: latitude,
     longitude: longitude,
     km: km,
-    confort: Array.from(confort).find((star) => star.checked)?.value || 0,
+    comfort: Array.from(comfort).find((star) => star.checked)?.value || 0,
   };
-  console.log(nowVehicle);
   return nowVehicle;
 }

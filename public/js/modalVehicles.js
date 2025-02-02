@@ -15,7 +15,7 @@ const year = document.getElementById("vehicleYearModal");
 const purpose = document.getElementById("vehiclePurposeModal");
 const latitude = document.getElementById("vehicleLatitudeModal");
 const longitude = document.getElementById("vehicleLongitudeModal");
-const confort = document.querySelectorAll('.modal__rating input[type="radio"]');
+const comfort = document.querySelectorAll('.modal__rating input[type="radio"]');
 const kilometer = document.getElementById("vehicleKmModal");
 const modalOk = document.getElementById("modalOkVehicles");
 const modalError = document.getElementById("modalErrorVehicles");
@@ -43,7 +43,7 @@ export const validationModal = () => {
     purpose.value === "" ||
     latitude.value === "" ||
     longitude.value === "" ||
-    !Array.from(confort).some((input) => input.checked)
+    !Array.from(comfort).some((input) => input.checked)
   ) {
     showModalError(modalError, "Preencha todos os campos!");
     return false;
@@ -65,7 +65,7 @@ save.addEventListener("click", (event) => {
   modal.style.display = "none";
   if (validationModal()) {
     const selectedStar = document.querySelector(".modal__rating input:checked");
-    const confortValueRegister = selectedStar ? selectedStar.value : 0;
+    const comfortValueRegister = selectedStar ? selectedStar.value : 0;
 
     const newVehicle = {
       plate: plate.value.trim().toUpperCase(),
@@ -74,7 +74,7 @@ save.addEventListener("click", (event) => {
       year: year.value,
       purpose: purpose.value,
       km: kilometer.checked === true ? "Sim" : "Não",
-      confort: confortValueRegister,
+      comfort: comfortValueRegister,
       location: `${latitude.value}, ${longitude.value}`,
       details: "../img/Frame 1.svg",
     };

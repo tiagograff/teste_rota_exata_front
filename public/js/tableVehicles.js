@@ -27,7 +27,7 @@ export function renderTable(page, vehiclesList) {
     <td id="colorInfo-${idCounter}" class="table__vehicles--info">${vehicle.color}</td>
     <td id="purposeInfo-${idCounter}" class="table__vehicles--info">${vehicle.purpose}</td>
     <td id="kmInfo-${idCounter}" class="table__vehicles--info">${vehicle.km}</td>
-    <td id="confortInfo-${idCounter}" class="table__vehicles--info">${vehicle.confort}</td>
+    <td id="comfortInfo-${idCounter}" class="table__vehicles--info">${vehicle.comfort}</td>
     <td id="locationInfo-${idCounter}" class="table__vehicles--info">${vehicle.location}</td>
  `;
 

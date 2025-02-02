@@ -14,6 +14,14 @@ const tableBody = document.querySelector(".table__vehicles--body");
 const editModal = document.querySelector(".modal__vehicles--edit");
 const detailsModal = document.querySelector(".modal__vehicles--details");
 
+const plateDetails = document.getElementById("plateSpan");
+const markDetails = document.getElementById("markSpan");
+const yearDetails = document.getElementById("yearSpan");
+const colorDetails = document.getElementById("colorSpan");
+const purposeDetails = document.getElementById("purposeSpan");
+const kmDetails = document.getElementById("kmSpan");
+const comfortDetails = document.getElementById("comfortSpan");
+
 tableBody.addEventListener("click", (event) => {
   const detailsElement = event.target.closest(".image__details");
   if (detailsElement) {
@@ -74,6 +82,18 @@ tableBody.addEventListener("click", (event) => {
       detail: { currentID },
     });
     document.dispatchEvent(eventModalOpened);
+
+    const vehicleInfos = findVehicleInfo(currentID);
+    let comfortValue = document.getElementById(`comfortInfo-${currentID}`);
+    comfortValue = comfortValue.textContent.trim();
+
+    plateDetails.textContent = vehicleInfos.plate;
+    markDetails.textContent = vehicleInfos.mark + " " + vehicleInfos.model;
+    yearDetails.textContent = vehicleInfos.year;
+    colorDetails.textContent = vehicleInfos.color;
+    purposeDetails.textContent = vehicleInfos.purpose;
+    kmDetails.textContent = vehicleInfos.km;
+    comfortDetails.textContent = comfortValue;
 
     closeDetails.addEventListener("click", () => {
       detailsModal.style.display = "none";
