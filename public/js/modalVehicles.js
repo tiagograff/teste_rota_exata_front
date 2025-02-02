@@ -24,6 +24,16 @@ export const saveToLocalStorage = (loggedUser) => {
   localStorage.setItem("loggedUser", JSON.stringify(loggedUser));
 };
 
+const closeAllModals = () => {
+  document
+    .querySelectorAll(
+      ".modal__vehicles, .modal__vehicles--edit, .modal__vehicles--details"
+    )
+    .forEach((modal) => {
+      modal.style.display = "none";
+    });
+};
+
 export const validationModal = () => {
   const isPlateRegistered = loggedUser.vehicles.some(
     (vehicle) => vehicle.plate.toUpperCase() === plate.value.toUpperCase()
@@ -53,11 +63,12 @@ export const validationModal = () => {
 };
 
 register.addEventListener("click", () => {
+  closeAllModals();
   modal.style.display = "flex";
 });
 
 close.addEventListener("click", () => {
-  modal.style.display = "none";
+  closeAllModals();
 });
 
 save.addEventListener("click", (event) => {

@@ -247,9 +247,9 @@
     flex: 1; 
   }
 
-  .modal__location {
+  .modal__location--map {
     position: absolute;
-    z-index: 1000;
+    z-index: 900;
     height: 58px;
     width: 178px;
     background-color: var(--color-white);
