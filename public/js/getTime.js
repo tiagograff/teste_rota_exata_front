@@ -1,4 +1,4 @@
-export const getTime = (type) => {
+export const getTime = (type, plate) => {
   const typeOfOperation = type;
   const date = new Date();
   const day = String(date.getDate()).padStart(2, "0");
@@ -13,7 +13,16 @@ export const getTime = (type) => {
 
   const timeString = `${hours}:${minutes}:${seconds}`;
 
-  console.log(timeString);
-
-  return { type: typeOfOperation, date: formattedDate, time: timeString };
+  return {
+    image:
+      typeOfOperation === "CADASTRADO"
+        ? "../img/plus-solid.svg"
+        : typeOfOperation === "EDITADO"
+        ? "../img/pen-solid.svg"
+        : "../img/trash-solid.svg",
+    type: typeOfOperation,
+    date: formattedDate,
+    time: timeString,
+    plate: plate,
+  };
 };

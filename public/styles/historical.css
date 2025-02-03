@@ -6,3 +6,32 @@
     margin: 35px 32px 24px 32px;
     background-color: var(--color-white);
 }
+
+.table__historical{
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table__historical--info{
+    font-size: var(--font-medium);
+    padding: 18px;
+}
+
+.table__historical--row{
+    border-top: 2px solid rgba(196, 196, 196, 0.2);
+}
+
+.table__historical--info{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+}
+
+.table__historical--info img{
+    width: 20px;
+    height: 20px;
+}

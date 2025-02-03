@@ -91,7 +91,7 @@ save.addEventListener("click", (event) => {
     };
     loggedUser.vehicles.push(newVehicle);
 
-    const historicalEntry = getTime("CADASTRO");
+    const historicalEntry = getTime("CADASTRADO", newVehicle.plate);
     loggedUser.historical.push(historicalEntry);
 
     saveToLocalStorage(loggedUser);

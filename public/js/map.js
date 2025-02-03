@@ -9,20 +9,15 @@ document.addEventListener("modalOpened", function (event) {
     const plateElement = document.getElementById(`plateInfo-${currentID}`);
 
     if (!plateElement) {
-      console.error("Elemento da placa não encontrado!");
       return;
     }
 
     const currentPlate = plateElement.innerText.trim();
-    console.log("Placa atual:", currentPlate);
 
     const vehicle = vehicles.find((v) => v.plate === currentPlate);
     if (!vehicle) {
-      console.error("Veículo não encontrado para a placa:", currentPlate);
       return;
     }
-
-    console.log("Veículo encontrado:", vehicle);
 
     let [latitude, longitude] = vehicle.location.split(" ");
     latitude = parseFloat(latitude.replace(/[^0-9.-]/g, ""));

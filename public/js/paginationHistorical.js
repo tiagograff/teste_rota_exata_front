@@ -3,7 +3,8 @@ import { renderTableHistorical } from "./tableHistorical.js";
 const paginationContainer = document.getElementById("pagination");
 let currentPage = 1;
 let loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
-let vehicles = loggedUser && loggedUser.vehicles ? loggedUser.vehicles : [];
+let historical =
+  loggedUser && loggedUser.historical ? loggedUser.historical : [];
 
 export function updateStatusButton(button) {
   if (button.disabled) {
@@ -45,7 +46,7 @@ export function renderPaginationHistorical(totalRows, rowsPerPage) {
       updateStatusButton(left);
       updateStatusButton(right);
 
-      renderTableHistorical(currentPage, vehicles);
+      renderTableHistorical(currentPage, historical);
     });
 
     paginationContainer.appendChild(button);
@@ -65,10 +66,10 @@ export function renderPaginationHistorical(totalRows, rowsPerPage) {
         .querySelector(".pagination__button.active")
         .classList.remove("active");
       paginationContainer
-        .querySelectorAll("button")
-        [currentPage].classList.add("active");
+        .querySelectorAll(".pagination__button")
+        [currentPage - 1].classList.add("active");
 
-      renderTableHistorical(currentPage, vehicles);
+      renderTableHistorical(currentPage, historical);
 
       left.disabled = currentPage === 1;
       right.disabled = false;
@@ -87,7 +88,7 @@ export function renderPaginationHistorical(totalRows, rowsPerPage) {
         .querySelectorAll("button")
         [currentPage].classList.add("active");
 
-      renderTableHistorical(currentPage, vehicles);
+      renderTableHistorical(currentPage, historical);
 
       right.disabled = currentPage === pageCount;
       left.disabled = false;

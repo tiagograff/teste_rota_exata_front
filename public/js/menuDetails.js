@@ -2,13 +2,13 @@ import { renderPagination } from "./pagination.js";
 import { renderTable } from "./tableVehicles.js";
 import { findVehicleInfo, vehicleUpdate } from "./modalEdit.js";
 import { findID } from "./findID.js";
+import { getTime } from "./getTime.js";
+import { saveToLocalStorage } from "./modalVehicles.js";
 
 let currentPage = 1;
 let loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
 let vehicles = loggedUser && loggedUser.vehicles ? loggedUser.vehicles : [];
-
 let currentID = 0;
-
 const rowsPerPage = 7;
 const tableBody = document.querySelector(".table__vehicles--body");
 const editModal = document.querySelector(".modal__vehicles--edit");
@@ -57,6 +57,10 @@ tableBody.addEventListener("click", (event) => {
 
     trElement.remove();
 
+    const historicalEntry = getTime("DELETADO", vehiclePlate);
+    loggedUser.historical.push(historicalEntry);
+    saveToLocalStorage(loggedUser);
+
     renderTable(currentPage, vehicles);
     renderPagination(vehicles.length, rowsPerPage);
     window.location.reload();
@@ -72,6 +76,10 @@ tableBody.addEventListener("click", (event) => {
     currentID = findID(event);
     const objecteVehicle = findVehicleInfo(currentID);
     vehicleUpdate(objecteVehicle);
+
+    const historicalEntry = getTime("EDITADO", objecteVehicle.plate);
+    loggedUser.historical.push(historicalEntry);
+    saveToLocalStorage(loggedUser);
   }
 
   const spanDetails = event.target.closest(".menu__navDetails--item");
