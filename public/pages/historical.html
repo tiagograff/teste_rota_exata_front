@@ -56,72 +56,38 @@
       </section>
     </header>
     <main>
-      <section class="container__filter">
-        <button class="button__register--vehicles">Cadastrar Veículo</button>
-        <section class="container__filter--options">
-          <div class="filter__option">
-            <label class="filter__labels" for="vehiclesMark">Marca:</label>
-            <div class="custom-select">
-              <div class="select-trigger" id="selectTrigger">
-                <span>Selecione a(s) marca(s) do veículo</span>
-                <div class="arrow"></div>
-              </div>
-              <div class="options" id="optionsList">
-                <label class="option">
-                  <input type="checkbox" value="audi" />
-                  Audi
-                </label>
-                <label class="option">
-                  <input type="checkbox" value="chery" />
-                  Chery
-                </label>
-                <label class="option">
-                  <input type="checkbox" value="chevrolet" />
-                  Chevrolet
-                </label>
-                <label class="option">
-                  <input type="checkbox" value="citroen" />
-                  Citroen
-                </label>
-                <label class="option">
-                  <input type="checkbox" value="fiat" />
-                  Fiat
-                </label>
-                <label class="option">
-                  <input type="checkbox" value="ford" />
-                  Ford
-                </label>
-              </div>
-            </div>
-          </div>             
-          <div class="filter__option">
-            <label class="filter__labels" for="purposeOfUse">Propósito de Uso:</label>
-            <select class="filter__select" name="vehiclesMark" id="vehiclesMark">
-              <option class="filter__select--option" value="">Selecione o propósito de uso</option>
-              <option class="filter__select--option" value="pessoal">Uso pessoal</option>
-              <option class="filter__select--option" value="locacao">Veículo para locação</option>
-              <option class="filter__select--option" value="empresa">Uso da empresa</option>
-            </select>
-          </div>
+      <section class="container__historical">
           <div class="filter__option">
             <label class="filter__labels" for="vehiclesPlate">Placa:</label>
-            <input class="filter__inputs" type="text" id="vehiclesPlate" placeholder="Digite a placa ou a cor do veículo" />
+            <input class="filter__inputs" type="text" id="vehiclesPlate" placeholder="Digite a placa do veículo" />
           </div>
           <div class="container__filter--search">
-            <button class="filter__button--search" >
+            <button id="buttonSearchHistorical" class="filter__button--search" >
               <img src="../img/magnifying-glass.svg" alt="buscador" />
             </button>
-            <button class="filter__button--search"><img src="../img/erase.svg" alt="apagar buscador" /></button>
+            <button id="buttonRubberHistorical" class="filter__button--search"><img src="../img/erase.svg" alt="apagar buscador" /></button>
           </div>
           <button class="filter__button--filter">
             <img src="../img/bars-filter.svg" alt="filtrar" />
           </button>
         </section>
-      </section>
+        <section class="table">
+          <table class="table__historical" id="tableHistorical" aria-label="Tabela de veículos">
+            <tbody class="table__historical--body">
+            </tbody>
+          </table>
+          </table>
+          <section class="pagination" id="pagination">
+          </section>
+        </section>
     </main>
-    <script src="../js/checkbox.js"></script>
     <script src="../js/menuLogout.js"></script>
     <script type="module" src="../js/findUsers.js"></script>
     <script type="module" src="../js/updateUsername.js"></script>
+    <script type="module" src="../js/modalOk.js"></script>
+    <script type="module" src="../js/modalError.js"></script>
+    <script type="module" src="../js/tableHistorical.js"></script>
+    <script type="module" src="../js/filterHistorical.js"></script>   
+    <script type="module" src="../js/paginationHistorical.js"></script> 
   </body>
 </html>

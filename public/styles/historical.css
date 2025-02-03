@@ -1,0 +1,8 @@
+.container__historical{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin: 35px 32px 24px 32px;
+    background-color: var(--color-white);
+}
