@@ -2,6 +2,8 @@ import { renderPaginationHistorical } from "./paginationHistorical.js";
 
 let loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
 let vehicles = loggedUser && loggedUser.vehicles ? loggedUser.vehicles : [];
+let historical =
+  loggedUser && loggedUser.historical ? loggedUser.historical : [];
 
 const rowsPerPage = 7;
 const tableBody = document.querySelector(".table__historical--body");
@@ -10,29 +12,32 @@ export function renderTableHistorical(page, vehiclesList) {
   const start = (page - 1) * rowsPerPage;
   const end = start + rowsPerPage;
   const pageData = vehiclesList.slice(start, end);
-
-  let idCounter = 1;
-
   tableBody.innerHTML = "";
 
-  pageData.forEach((vehicle) => {
+  console.log(loggedUser.historical);
+  pageData.forEach((vehicle, index) => {
     const tr = document.createElement("tr");
+
+    // Usando historical diretamente
+    const historyEntry = historical[index] || {
+      type: "N/A",
+      date: "N/A",
+      time: "N/A",
+    }; // Garantindo que haja um fallback
+
     tr.className = "table__historical--row";
-    tr.id = `tableRowHistorical${idCounter}`;
-    ++idCounter;
+    tr.id = `tableRowHistorical${index + 1}`;
+
     tr.innerHTML = `
-    <td id="plateInfo-${idCounter}" class="table__vehicles--info">${vehicle.plate}</td>
-    <td id="markInfo-${idCounter}" class="table__vehicles--info">${vehicle.mark}</td>
-    <td id="yearInfo-${idCounter}" class="table__vehicles--info">${vehicle.year}</td>
-    <td id="colorInfo-${idCounter}" class="table__vehicles--info">${vehicle.color}</td>
-    <td id="purposeInfo-${idCounter}" class="table__vehicles--info">${vehicle.purpose}</td>
-    <td id="kmInfo-${idCounter}" class="table__vehicles--info">${vehicle.km}</td>
-    <td id="comfortInfo-${idCounter}" class="table__vehicles--info">${vehicle.comfort}</td>
-    <td id="locationInfo-${idCounter}" class="table__vehicles--info">${vehicle.location}</td>
- `;
+      <td id="historicalInfo-${index + 1}" class="table__historical--info">
+        Veículo <strong>${vehicle.plate} ${historyEntry.type} em ${
+      historyEntry.date
+    } às ${historyEntry.time}</strong>
+      </td>
+    `;
 
     const tdDetails = document.createElement("td");
-    tdDetails.id = `detailsInfo${idCounter}`;
+    tdDetails.id = `detailsInfo${index + 1}`;
     tdDetails.className = "table__vehicles--info";
 
     const items = document.createElement("li");

@@ -11,7 +11,7 @@ export function renderTable(page, vehiclesList) {
   const end = start + rowsPerPage;
   const pageData = vehiclesList.slice(start, end);
 
-  let idCounter = 1;
+  let idCounter = 0;
 
   tableBody.innerHTML = "";
 

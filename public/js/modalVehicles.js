@@ -1,5 +1,6 @@
 import { showModalError } from "./modalError.js";
 import { showModalOk } from "./modalOk.js";
+import { getTime } from "./getTime.js";
 
 let loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
 
@@ -77,7 +78,6 @@ save.addEventListener("click", (event) => {
   if (validationModal()) {
     const selectedStar = document.querySelector(".modal__rating input:checked");
     const comfortValueRegister = selectedStar ? selectedStar.value : 0;
-
     const newVehicle = {
       plate: plate.value.trim().toUpperCase(),
       mark: mark.value + " " + model.value,
@@ -90,6 +90,10 @@ save.addEventListener("click", (event) => {
       details: "../img/Frame 1.svg",
     };
     loggedUser.vehicles.push(newVehicle);
+
+    const historicalEntry = getTime("CADASTRO");
+    loggedUser.historical.push(historicalEntry);
+
     saveToLocalStorage(loggedUser);
     showModalOk(modalOk, "Veículo cadastrado com sucesso!");
     setTimeout(() => {
